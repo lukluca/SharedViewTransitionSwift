@@ -13,7 +13,6 @@ class ChildViewController: UIViewController {
     @IBOutlet weak var imageContainerView: UIView!
     
     var index:Int?
-    weak var delegate: SharedViewTransitionProtocol?
 
     override func viewDidLoad() {
         navigationItem.title = "Detail Image!"
