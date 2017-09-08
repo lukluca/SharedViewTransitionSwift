@@ -9,16 +9,47 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ParentViewController" customModule="SharedViewTransitionSwift" customModuleProvider="target">
-            <connections>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ParentViewController" customModule="SharedViewTransitionSwift" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </view>
+        <viewController id="hHw-LB-0Ne" customClass="ParentViewController" customModule="SharedViewTransitionSwift" customModuleProvider="target">
+            <layoutGuides>
+                <viewControllerLayoutGuide type="top" id="oXZ-tr-7wI"/>
+                <viewControllerLayoutGuide type="bottom" id="do3-ss-XUk"/>
+            </layoutGuides>
+            <view key="view" contentMode="scaleToFill" id="wPn-DO-CMN">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLc-sE-Uni">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="eeh-g3-mSN"/>
+                        </constraints>
+                    </view>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="EMr-JS-1Yb">
+                        <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5Hf-AR-VvL">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="aLc-sE-Uni" secondAttribute="trailing" id="2Ic-Xy-A6g"/>
+                    <constraint firstItem="EMr-JS-1Yb" firstAttribute="top" secondItem="aLc-sE-Uni" secondAttribute="bottom" id="SvC-sT-Asq"/>
+                    <constraint firstItem="EMr-JS-1Yb" firstAttribute="leading" secondItem="wPn-DO-CMN" secondAttribute="leading" id="aL3-OI-SDu"/>
+                    <constraint firstItem="aLc-sE-Uni" firstAttribute="leading" secondItem="wPn-DO-CMN" secondAttribute="leading" id="aiX-XK-kVy"/>
+                    <constraint firstAttribute="trailing" secondItem="EMr-JS-1Yb" secondAttribute="trailing" id="g86-AP-iTr"/>
+                    <constraint firstItem="aLc-sE-Uni" firstAttribute="top" secondItem="wPn-DO-CMN" secondAttribute="top" id="lI2-qb-aFG"/>
+                    <constraint firstItem="do3-ss-XUk" firstAttribute="top" secondItem="EMr-JS-1Yb" secondAttribute="bottom" id="y5f-Eu-Ubo"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </viewController>
     </objects>
 </document>
