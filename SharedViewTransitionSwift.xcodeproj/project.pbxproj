@@ -7,25 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43438EC21F62A93C00933FB8 /* ImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43438EC11F62A93C00933FB8 /* ImageCollectionViewCell.xib */; };
+		43438EC41F62A98300933FB8 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43438EC31F62A98300933FB8 /* ImageCollectionViewCell.swift */; };
 		4353E57F1F6041BA00C6A0CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353E57E1F6041BA00C6A0CB /* AppDelegate.swift */; };
 		4353E5861F6041BA00C6A0CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4353E5851F6041BA00C6A0CB /* Assets.xcassets */; };
 		4353E5891F6041BA00C6A0CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4353E5871F6041BA00C6A0CB /* LaunchScreen.storyboard */; };
 		43C4B8A71F62970B0053EFE3 /* ChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C4B8A61F62970B0053EFE3 /* ChildViewController.swift */; };
 		43C4B8A91F62975B0053EFE3 /* ChildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C4B8A81F62975B0053EFE3 /* ChildViewController.xib */; };
+		43C4B8B71F62A2690053EFE3 /* tree9.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 43C4B8AD1F62A2690053EFE3 /* tree9.jpeg */; };
+		43C4B8B81F62A2690053EFE3 /* tree8.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 43C4B8AE1F62A2690053EFE3 /* tree8.jpeg */; };
+		43C4B8B91F62A2690053EFE3 /* tree7.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 43C4B8AF1F62A2690053EFE3 /* tree7.jpeg */; };
+		43C4B8BA1F62A2690053EFE3 /* tree6.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 43C4B8B01F62A2690053EFE3 /* tree6.jpeg */; };
+		43C4B8BB1F62A2690053EFE3 /* tree5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 43C4B8B11F62A2690053EFE3 /* tree5.jpeg */; };
+		43C4B8BC1F62A2690053EFE3 /* tree4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 43C4B8B21F62A2690053EFE3 /* tree4.jpeg */; };
+		43C4B8BD1F62A2690053EFE3 /* tree3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 43C4B8B31F62A2690053EFE3 /* tree3.jpeg */; };
+		43C4B8BE1F62A2690053EFE3 /* tree2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 43C4B8B41F62A2690053EFE3 /* tree2.jpeg */; };
+		43C4B8BF1F62A2690053EFE3 /* tree1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 43C4B8B51F62A2690053EFE3 /* tree1.jpeg */; };
+		43C4B8C01F62A2690053EFE3 /* tree0.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 43C4B8B61F62A2690053EFE3 /* tree0.jpeg */; };
+		43C4B8C21F62A3CF0053EFE3 /* ImageFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C4B8C11F62A3CF0053EFE3 /* ImageFileManager.swift */; };
 		74077EDF1F604B30006C74A0 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74077EDD1F604B30006C74A0 /* ParentViewController.swift */; };
 		74077EE01F604B30006C74A0 /* ParentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74077EDE1F604B30006C74A0 /* ParentViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43438EC11F62A93C00933FB8 /* ImageCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageCollectionViewCell.xib; path = ../ImageCollectionViewCell.xib; sourceTree = "<group>"; };
+		43438EC31F62A98300933FB8 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageCollectionViewCell.swift; path = ../ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		4353E57B1F6041BA00C6A0CB /* SharedViewTransitionSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharedViewTransitionSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4353E57E1F6041BA00C6A0CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4353E5851F6041BA00C6A0CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4353E5881F6041BA00C6A0CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4353E58A1F6041BA00C6A0CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		43C4B8A61F62970B0053EFE3 /* ChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildViewController.swift; sourceTree = "<group>"; };
-		43C4B8A81F62975B0053EFE3 /* ChildViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChildViewController.xib; sourceTree = "<group>"; };
-		74077EDD1F604B30006C74A0 /* ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
-		74077EDE1F604B30006C74A0 /* ParentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ParentViewController.xib; sourceTree = "<group>"; };
+		43C4B8A61F62970B0053EFE3 /* ChildViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChildViewController.swift; path = ../ChildViewController.swift; sourceTree = "<group>"; };
+		43C4B8A81F62975B0053EFE3 /* ChildViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChildViewController.xib; path = ../ChildViewController.xib; sourceTree = "<group>"; };
+		43C4B8AD1F62A2690053EFE3 /* tree9.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = tree9.jpeg; path = /Users/l.tagliabue/SharedViewTransitionSwift/SharedViewTransitionSwift/pic/tree9.jpeg; sourceTree = "<absolute>"; };
+		43C4B8AE1F62A2690053EFE3 /* tree8.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tree8.jpeg; sourceTree = "<group>"; };
+		43C4B8AF1F62A2690053EFE3 /* tree7.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tree7.jpeg; sourceTree = "<group>"; };
+		43C4B8B01F62A2690053EFE3 /* tree6.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tree6.jpeg; sourceTree = "<group>"; };
+		43C4B8B11F62A2690053EFE3 /* tree5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tree5.jpeg; sourceTree = "<group>"; };
+		43C4B8B21F62A2690053EFE3 /* tree4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tree4.jpeg; sourceTree = "<group>"; };
+		43C4B8B31F62A2690053EFE3 /* tree3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tree3.jpeg; sourceTree = "<group>"; };
+		43C4B8B41F62A2690053EFE3 /* tree2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tree2.jpeg; sourceTree = "<group>"; };
+		43C4B8B51F62A2690053EFE3 /* tree1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tree1.jpeg; sourceTree = "<group>"; };
+		43C4B8B61F62A2690053EFE3 /* tree0.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tree0.jpeg; sourceTree = "<group>"; };
+		43C4B8C11F62A3CF0053EFE3 /* ImageFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageFileManager.swift; sourceTree = "<group>"; };
+		74077EDD1F604B30006C74A0 /* ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParentViewController.swift; path = ../ParentViewController.swift; sourceTree = "<group>"; };
+		74077EDE1F604B30006C74A0 /* ParentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ParentViewController.xib; path = ../ParentViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +65,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43438EC51F62A9D700933FB8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				74077EDD1F604B30006C74A0 /* ParentViewController.swift */,
+				43C4B8A61F62970B0053EFE3 /* ChildViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		43438EC61F62AABD00933FB8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				43438EC31F62A98300933FB8 /* ImageCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		43438EC71F62AAF400933FB8 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				43C4B8A81F62975B0053EFE3 /* ChildViewController.xib */,
+				74077EDE1F604B30006C74A0 /* ParentViewController.xib */,
+				43438EC11F62A93C00933FB8 /* ImageCollectionViewCell.xib */,
+			);
+			path = Xibs;
+			sourceTree = "<group>";
+		};
 		4353E5721F6041BA00C6A0CB = {
 			isa = PBXGroup;
 			children = (
@@ -58,17 +111,36 @@
 		4353E57D1F6041BA00C6A0CB /* SharedViewTransitionSwift */ = {
 			isa = PBXGroup;
 			children = (
+				43438EC71F62AAF400933FB8 /* Xibs */,
+				43438EC61F62AABD00933FB8 /* Views */,
+				43438EC51F62A9D700933FB8 /* ViewControllers */,
+				43C4B8AA1F62A1DF0053EFE3 /* pic */,
 				4353E57E1F6041BA00C6A0CB /* AppDelegate.swift */,
-				43C4B8A61F62970B0053EFE3 /* ChildViewController.swift */,
-				74077EDD1F604B30006C74A0 /* ParentViewController.swift */,
-				74077EDE1F604B30006C74A0 /* ParentViewController.xib */,
+				43C4B8C11F62A3CF0053EFE3 /* ImageFileManager.swift */,
 				4353E5851F6041BA00C6A0CB /* Assets.xcassets */,
 				4353E5871F6041BA00C6A0CB /* LaunchScreen.storyboard */,
 				4353E58A1F6041BA00C6A0CB /* Info.plist */,
-				43C4B8A81F62975B0053EFE3 /* ChildViewController.xib */,
 			);
 			path = SharedViewTransitionSwift;
 			sourceTree = "<group>";
+		};
+		43C4B8AA1F62A1DF0053EFE3 /* pic */ = {
+			isa = PBXGroup;
+			children = (
+				43C4B8AD1F62A2690053EFE3 /* tree9.jpeg */,
+				43C4B8AE1F62A2690053EFE3 /* tree8.jpeg */,
+				43C4B8AF1F62A2690053EFE3 /* tree7.jpeg */,
+				43C4B8B01F62A2690053EFE3 /* tree6.jpeg */,
+				43C4B8B11F62A2690053EFE3 /* tree5.jpeg */,
+				43C4B8B21F62A2690053EFE3 /* tree4.jpeg */,
+				43C4B8B31F62A2690053EFE3 /* tree3.jpeg */,
+				43C4B8B41F62A2690053EFE3 /* tree2.jpeg */,
+				43C4B8B51F62A2690053EFE3 /* tree1.jpeg */,
+				43C4B8B61F62A2690053EFE3 /* tree0.jpeg */,
+			);
+			name = pic;
+			path = /Users/l.tagliabue/SharedViewTransitionSwift/SharedViewTransitionSwift/pic;
+			sourceTree = "<absolute>";
 		};
 /* End PBXGroup section */
 
@@ -131,8 +203,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				4353E5891F6041BA00C6A0CB /* LaunchScreen.storyboard in Resources */,
+				43438EC21F62A93C00933FB8 /* ImageCollectionViewCell.xib in Resources */,
+				43C4B8B71F62A2690053EFE3 /* tree9.jpeg in Resources */,
 				4353E5861F6041BA00C6A0CB /* Assets.xcassets in Resources */,
+				43C4B8BD1F62A2690053EFE3 /* tree3.jpeg in Resources */,
+				43C4B8BE1F62A2690053EFE3 /* tree2.jpeg in Resources */,
 				74077EE01F604B30006C74A0 /* ParentViewController.xib in Resources */,
+				43C4B8BF1F62A2690053EFE3 /* tree1.jpeg in Resources */,
+				43C4B8BA1F62A2690053EFE3 /* tree6.jpeg in Resources */,
+				43C4B8B81F62A2690053EFE3 /* tree8.jpeg in Resources */,
+				43C4B8BC1F62A2690053EFE3 /* tree4.jpeg in Resources */,
+				43C4B8B91F62A2690053EFE3 /* tree7.jpeg in Resources */,
+				43C4B8BB1F62A2690053EFE3 /* tree5.jpeg in Resources */,
+				43C4B8C01F62A2690053EFE3 /* tree0.jpeg in Resources */,
 				43C4B8A91F62975B0053EFE3 /* ChildViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,8 +228,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4353E57F1F6041BA00C6A0CB /* AppDelegate.swift in Sources */,
+				43438EC41F62A98300933FB8 /* ImageCollectionViewCell.swift in Sources */,
 				74077EDF1F604B30006C74A0 /* ParentViewController.swift in Sources */,
 				43C4B8A71F62970B0053EFE3 /* ChildViewController.swift in Sources */,
+				43C4B8C21F62A3CF0053EFE3 /* ImageFileManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
