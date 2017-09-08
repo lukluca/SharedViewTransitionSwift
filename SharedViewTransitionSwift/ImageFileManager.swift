@@ -11,24 +11,23 @@ import UIKit
 
 class ImageFileManager {
     
+    public static let ratio = 1/1.335
+    
     public static let sharedInstance = ImageFileManager()
     
-    public var imageUrls = [URL]()
+    public var imageUrls = [String]()
     
     private init() {
-        
-        for number in 0..<10 {
-            let fileName = "tree\(number).jpeg"
-            if let dirUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-                let path = dirUrl.appendingPathComponent(fileName)
-                imageUrls.append(path)
-            }
-        }
+    
+        self.imageUrls = (0..<10).map {
+            Bundle.main.path(forResource: "tree\($0)", ofType: "jpeg")
+            
+            }.filter({$0 != nil}).map({$0!})
     }
     
     public func getImageFrom(index: Int) -> UIImage? {
         
-        guard index < imageUrls.count, let image = UIImage(contentsOfFile: imageUrls[index].path) else {
+        guard index < imageUrls.count, let image = UIImage(contentsOfFile: imageUrls[index]) else {
             return nil
         }
         

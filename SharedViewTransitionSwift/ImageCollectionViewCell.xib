@@ -11,13 +11,27 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="oQp-3o-Rnf">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ImageCollectionViewCell" id="oQp-3o-Rnf" customClass="ImageCollectionViewCell" customModule="SharedViewTransitionSwift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5sJ-9E-MqC">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                    </imageView>
+                </subviews>
             </view>
+            <constraints>
+                <constraint firstItem="5sJ-9E-MqC" firstAttribute="leading" secondItem="oQp-3o-Rnf" secondAttribute="leading" id="aE6-aD-BRk"/>
+                <constraint firstAttribute="trailing" secondItem="5sJ-9E-MqC" secondAttribute="trailing" id="rKH-sN-I6Z"/>
+                <constraint firstAttribute="bottom" secondItem="5sJ-9E-MqC" secondAttribute="bottom" id="ss5-jr-OTb"/>
+                <constraint firstItem="5sJ-9E-MqC" firstAttribute="top" secondItem="oQp-3o-Rnf" secondAttribute="top" id="wp6-c7-PP7"/>
+            </constraints>
+            <connections>
+                <outlet property="image" destination="5sJ-9E-MqC" id="sJI-Vj-aOX"/>
+            </connections>
         </collectionViewCell>
     </objects>
 </document>

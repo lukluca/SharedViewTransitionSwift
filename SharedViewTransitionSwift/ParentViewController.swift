@@ -15,16 +15,28 @@ class ParentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Shared View Transition!!!!"
+    
         collectionView.delegate = self
         collectionView.dataSource = self
-        
-        collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: String(describing: ImageCollectionViewCell.self))
+    
+        let cellNib = UINib(nibName: "ImageCollectionViewCell", bundle: nil)
+        collectionView.register(cellNib, forCellWithReuseIdentifier: String(describing: ImageCollectionViewCell.self))
         
     }
 }
 
 extension ParentViewController: UICollectionViewDelegate {
     
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let child = ChildViewController(nibName: String(describing: ChildViewController.self), bundle: nil)
+        
+        child.index = indexPath.row
+        
+        navigationController?.pushViewController(child, animated: true)
+    }
+        
 }
 
 extension ParentViewController: UICollectionViewDataSource {
@@ -43,11 +55,23 @@ extension ParentViewController: UICollectionViewDataSource {
             cell = UICollectionViewCell()
         }
         
+        if let imageCell = cell as? ImageCollectionViewCell {
+            imageCell.setImageFor(index: indexPath.row)
+        }
+        
         return cell        
     }
     
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 1
+    }
+    
+}
+
+extension ParentViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return ImageCollectionViewCell.size
     }
     
 }

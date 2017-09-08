@@ -12,58 +12,34 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ParentViewController" customModule="SharedViewTransitionSwift" customModuleProvider="target">
             <connections>
                 <outlet property="collectionView" destination="EMr-JS-1Yb" id="B0Z-JO-X9f"/>
+                <outlet property="view" destination="IBn-a6-14r" id="zOi-lA-k52"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <viewController nibName="ParentViewController" id="hHw-LB-0Ne" customClass="ParentViewController" customModule="SharedViewTransitionSwift" customModuleProvider="target">
-            <layoutGuides>
-                <viewControllerLayoutGuide type="top" id="oXZ-tr-7wI"/>
-                <viewControllerLayoutGuide type="bottom" id="do3-ss-XUk"/>
-            </layoutGuides>
-            <view key="view" contentMode="scaleToFill" id="wPn-DO-CMN">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLc-sE-Uni">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shared View Transition!!!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJt-Uf-bnG">
-                                <rect key="frame" x="89.5" y="39" width="195" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="PJt-Uf-bnG" firstAttribute="centerX" secondItem="aLc-sE-Uni" secondAttribute="centerX" id="72a-we-sTs"/>
-                            <constraint firstItem="PJt-Uf-bnG" firstAttribute="centerY" secondItem="aLc-sE-Uni" secondAttribute="centerY" id="XeU-7x-JZA"/>
-                            <constraint firstAttribute="height" constant="100" id="eeh-g3-mSN"/>
-                        </constraints>
-                    </view>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="EMr-JS-1Yb">
-                        <rect key="frame" x="0.0" y="100" width="375" height="567"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5Hf-AR-VvL">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                    </collectionView>
-                </subviews>
-                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                <constraints>
-                    <constraint firstAttribute="trailing" secondItem="aLc-sE-Uni" secondAttribute="trailing" id="2Ic-Xy-A6g"/>
-                    <constraint firstItem="EMr-JS-1Yb" firstAttribute="top" secondItem="aLc-sE-Uni" secondAttribute="bottom" id="SvC-sT-Asq"/>
-                    <constraint firstItem="EMr-JS-1Yb" firstAttribute="leading" secondItem="wPn-DO-CMN" secondAttribute="leading" id="aL3-OI-SDu"/>
-                    <constraint firstItem="aLc-sE-Uni" firstAttribute="leading" secondItem="wPn-DO-CMN" secondAttribute="leading" id="aiX-XK-kVy"/>
-                    <constraint firstAttribute="trailing" secondItem="EMr-JS-1Yb" secondAttribute="trailing" id="g86-AP-iTr"/>
-                    <constraint firstItem="aLc-sE-Uni" firstAttribute="top" secondItem="wPn-DO-CMN" secondAttribute="top" id="lI2-qb-aFG"/>
-                    <constraint firstItem="do3-ss-XUk" firstAttribute="top" secondItem="EMr-JS-1Yb" secondAttribute="bottom" id="y5f-Eu-Ubo"/>
-                </constraints>
-            </view>
-            <point key="canvasLocation" x="33.5" y="53.5"/>
-        </viewController>
+        <view contentMode="scaleToFill" id="IBn-a6-14r">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="EMr-JS-1Yb">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="5Hf-AR-VvL">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="EMr-JS-1Yb" secondAttribute="trailing" id="03j-0Q-xqw"/>
+                <constraint firstAttribute="bottom" secondItem="EMr-JS-1Yb" secondAttribute="bottom" id="Wro-hY-4J6"/>
+                <constraint firstItem="EMr-JS-1Yb" firstAttribute="leading" secondItem="IBn-a6-14r" secondAttribute="leading" id="YRE-hB-JSE"/>
+                <constraint firstItem="EMr-JS-1Yb" firstAttribute="top" secondItem="IBn-a6-14r" secondAttribute="top" id="mJJ-vl-hv9"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <point key="canvasLocation" x="33.5" y="789.5"/>
+        </view>
     </objects>
 </document>
