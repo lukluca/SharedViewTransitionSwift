@@ -10,25 +10,28 @@ import UIKit
 
 struct TransitionParameters {
     let duration: TimeInterval
-    let childVC: ChildViewController
-    let parentVC: ParentViewController
+    let childVC: UIViewController
+    let parentVC: UIViewController
     let navigationController: UINavigationController
-
 }
 
-class SharedViewTransitionAnimation {
+protocol SharedViewTransitionProtocol: class {
+    var sharedView: UIView { get }
+}
 
-    let transitionParameters: TransitionParameters
+class SharedViewTransitionAnimation: NSObject {
+
+    var transitionParameters: TransitionParameters
     
     //Define singleton
     static let sharedInstance = SharedViewTransitionAnimation()
-    private init() {}
+    private override init() {}
     
 //MARK: Private methods
-    func isTransitionReversed(fromViewController: UIViewController, toViewController: UIViewController) -> BOOL {
+    func isTransitionReversed(fromViewController: UIViewController, toViewController: UIViewController) -> Bool {
         let parameters: TransitionParameters = transitionParameters
         
-        if (parameters.parentVC == oViewController.class, parameters.childVC == tfromViewController.class) {
+        if (parameters.parentVC === toViewController && parameters.childVC === fromViewController) {
             return true
         }
     
@@ -36,39 +39,40 @@ class SharedViewTransitionAnimation {
     }
 
 //MARK: Public methods
-    func addTransitionParameters(fromVCClass: SharedViewTransitionDataSource.Type, toVCClass: SharedViewTransitionDataSource.Type, with navigationController: UINavigationController, with duration: TimeInterval) {
+    func addTransitionParameters(fromVCClass: UIViewController, toVCClass: UIViewController, with navigationController: UINavigationController, with duration: TimeInterval) {
         
-        transitionParameters = TransitionParameters(parentVC: fromVCClass, childVC: toVCClass, navigationController: navigationController, duration: duration)
-        transitionParameters.navigationController.delegate = sharedInstance
+        transitionParameters = TransitionParameters(duration: duration, childVC: toVCClass, parentVC: fromVCClass, navigationController: navigationController)
+        transitionParameters.navigationController.delegate = SharedViewTransitionAnimation.sharedInstance
     }
 }
 
 extension SharedViewTransitionAnimation: UIViewControllerAnimatedTransitioning {
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        let toVC: UIViewController<SharedViewTransitionDataSource> = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)
-        let fromVC: UIViewController<SharedViewTransitionDataSource> = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)
+        guard let toVC: UIViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)
+ else { return }
+        guard let fromVC: UIViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)
+ else { return }
         
-        guard let parameters = transitionParameters else { return }
-        
-        let reversed: BOOL = isTransitionReversed(fromVC, toVC)
+        let reversed: Bool = isTransitionReversed(fromViewController: fromVC, toViewController: toVC)
         
         let fromView: UIView = fromVC.sharedView
         let toView: UIView = toVC.sharedView
         
         let containerView: UIView = transitionContext.sharedView
-        let duration: TimeInterval = transitionDuration(transitionContext)
+        let duration: TimeInterval = transitionDuration(using: transitionContext)
         
         //Take snapshot of fromView
-        let snapshotView: UIView = fromView.snapshotViewAfterScreenUpdates(false)
-        snapshotView.frame = containerView.convertRect(fromView.frame, fromView:fromView.superview)
-        fromView.hidden = true
+        let snapshot: UIView? = fromView.snapshotView(afterScreenUpdates: false)
+        guard let snapshotView = snapshot else { return }
+        snapshotView.frame = containerView.convert(fromView.frame, from:fromView.superview)
+        fromView.isHidden = true
         
         //Setup the initial view states
-        toVC.view.frame = transitionContext.finalFrameForViewController(toVC)
+        toVC.view.frame = transitionContext.finalFrame(for: toVC)
         
         if (!reversed) {
             toVC.view.alpha = 0
-            toView.hidden = true
+            toView.isHidden = true
             containerView.addSubview(toVC.view)
         } else {
             containerView.insertSubview(toVC.view, belowSubview:fromVC.view)
@@ -84,12 +88,12 @@ extension SharedViewTransitionAnimation: UIViewControllerAnimatedTransitioning {
             }
             
             //Move the snapshot
-            snapshotView.frame = containerView.convertRect(toView.frame, fromView:toView.superview)
+            snapshotView.frame = containerView.convert(toView.frame, from:toView.superview)
         }, completion: { (completed) in
             if (completed) {
                 //Clean up
-                toView.hidden = false
-                fromView.hidden = false
+                toView.isHidden = false
+                fromView.isHidden = false
                 snapshotView.removeFromSuperview()
                 
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
@@ -98,14 +102,7 @@ extension SharedViewTransitionAnimation: UIViewControllerAnimatedTransitioning {
     }
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        let toVC: UIViewController = transitionContext.viewControllerForKey(UITransitionContextToViewControllerKey)
-        let fromVC: UIViewController = transitionContext.viewControllerForKey(UITransitionContextFromViewControllerKey)
-        
-        if let parameters = transitionParameters {
-            return parameters.duration
-        } else {
-            return 0
-        }
+        return transitionParameters.duration
     }
 }
 
@@ -114,14 +111,6 @@ extension SharedViewTransitionAnimation: UINavigationControllerDelegate {
                                        animationControllerFor operation: UINavigationControllerOperation,
                                        from fromVC: UIViewController,
                                        to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        if let parameters = transitionParameters {
-            return sharedInstance
-        } else {
-            return nil
-        }
+        return SharedViewTransitionAnimation.sharedInstance
     }
-}
-
-protocol SharedViewTransitionDataSource {
-    var sharedView: UIView
 }

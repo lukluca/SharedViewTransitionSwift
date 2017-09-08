@@ -12,6 +12,8 @@ class ParentViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    weak var delegate: SharedViewTransitionProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
