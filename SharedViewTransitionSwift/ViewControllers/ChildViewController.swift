@@ -13,6 +13,8 @@ class ChildViewController: UIViewController {
     @IBOutlet weak var imageContainerView: UIView!
     
     var index:Int?
+    
+    let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: (UIScreen.main.bounds.width*CGFloat(ImageFileManager.ratio))))
 
     override func viewDidLoad() {
         navigationItem.title = "Detail Image!"
@@ -26,11 +28,17 @@ class ChildViewController: UIViewController {
     
     private func loadImageAt(index: Int) {
         
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: (UIScreen.main.bounds.width*CGFloat(ImageFileManager.ratio))))
-        
         imageView.image = ImageFileManager.sharedInstance.getImageFrom(index: index)
         
         imageContainerView.addSubview(imageView)
     }
 
+}
+
+extension ChildViewController: SharedViewTransitionProtocol {
+    
+    var sharedView: UIView? {
+        return imageView
+    }
+    
 }

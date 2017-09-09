@@ -9,17 +9,17 @@
 import UIKit
 
 class ParentViewController: UIViewController {
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "Shared View Transition!!!!"
-    
+        
         collectionView.delegate = self
         collectionView.dataSource = self
-    
+        
         let cellNib = UINib(nibName: "ImageCollectionViewCell", bundle: nil)
         collectionView.register(cellNib, forCellWithReuseIdentifier: String(describing: ImageCollectionViewCell.self))
         
@@ -34,9 +34,13 @@ extension ParentViewController: UICollectionViewDelegate {
         
         child.index = indexPath.row
         
+        if let nav = navigationController {
+            SharedViewTransitionAnimation.sharedInstance.addTransitionParameters(fromVCClass: self, toVCClass: child, with: nav, with: 0.3)
+        }
+        
         navigationController?.pushViewController(child, animated: true)
     }
-        
+    
 }
 
 extension ParentViewController: UICollectionViewDataSource {
@@ -59,7 +63,7 @@ extension ParentViewController: UICollectionViewDataSource {
             imageCell.setImageFor(index: indexPath.row)
         }
         
-        return cell        
+        return cell
     }
     
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -72,6 +76,19 @@ extension ParentViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return ImageCollectionViewCell.size
+    }
+    
+}
+
+extension ParentViewController: SharedViewTransitionProtocol {
+    
+    var sharedView: UIView? {
+        
+        guard  let index = collectionView.indexPathsForSelectedItems?.first else {
+            return nil
+        }
+        
+        return collectionView.cellForItem(at: index)
     }
     
 }
