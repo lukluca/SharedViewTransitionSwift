@@ -28,7 +28,7 @@ class SharedViewTransitionAnimation: NSObject {
     private override init() {}
     
     //MARK: Private methods
-    func isTransitionReversed(fromViewController: UIViewController, toViewController: UIViewController) -> Bool {
+    fileprivate func isTransitionReversed(fromViewController: UIViewController, toViewController: UIViewController) -> Bool {
         
         guard let tranPar = transitionParameters, tranPar.parentVC === toViewController, tranPar.childVC === fromViewController  else {
             return false
@@ -47,18 +47,19 @@ class SharedViewTransitionAnimation: NSObject {
 extension SharedViewTransitionAnimation: UIViewControllerAnimatedTransitioning {
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        
         guard let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)
             else { return }
         guard let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from)
             else { return }
-        
-        let reversed: Bool = isTransitionReversed(fromViewController: fromVC, toViewController: toVC)
         
         guard let fromVCSV = fromVC as? SharedViewTransitionProtocol
             else { return }
         
         guard let toVCSV = toVC  as? SharedViewTransitionProtocol
             else { return }
+        
+        let reversed = isTransitionReversed(fromViewController: fromVC, toViewController: toVC)
         
         let fromView = fromVCSV.sharedView
         let toView = toVCSV.sharedView
@@ -67,8 +68,9 @@ extension SharedViewTransitionAnimation: UIViewControllerAnimatedTransitioning {
         let duration = transitionDuration(using: transitionContext)
         
         //Take snapshot of fromView
-        let snapshot: UIView? = fromView?.snapshotView(afterScreenUpdates: false)
-        guard let snapshotView = snapshot else { return }
+        guard let snapshotView = fromView?.snapshotView(afterScreenUpdates: false)
+            else { return }
+        
         if let frame = fromView?.frame {
             snapshotView.frame = containerView.convert(frame, from:fromView?.superview)
         }
@@ -105,7 +107,6 @@ extension SharedViewTransitionAnimation: UIViewControllerAnimatedTransitioning {
                 toView?.isHidden = false
                 fromView?.isHidden = false
                 snapshotView.removeFromSuperview()
-                
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
             }
         })
@@ -122,6 +123,7 @@ extension SharedViewTransitionAnimation: UIViewControllerAnimatedTransitioning {
 }
 
 extension SharedViewTransitionAnimation: UINavigationControllerDelegate {
+    
     func navigationController(_ navigationController: UINavigationController,
                               animationControllerFor operation: UINavigationControllerOperation,
                               from fromVC: UIViewController,
