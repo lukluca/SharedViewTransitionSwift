@@ -75,8 +75,6 @@ extension SharedViewTransitionAnimation: UIViewControllerAnimatedTransitioning {
             snapshotView.frame = containerView.convert(frame, from:fromView?.superview)
         }
         
-        fromView?.isHidden = true
-        
         //Setup the initial view states
         toVC.view.frame = transitionContext.finalFrame(for: toVC)
         
